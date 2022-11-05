@@ -11,4 +11,20 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Strings related to Mechanics -->
+    <string name="near_by_mechanics">Mêcanicas próximas de mim</string>
+    <string name="search_input">Buscar mecânica</string>
+    <string name="mechanics">Mecânicas</string>
+    <string name="filter_painting">Tinturaria</string>
+    <string name="filter_parts">Peças</string>
+    <string name="filter_fix">Conserto</string>
+    <string name="filter_general_services">Serviços em Geral</string>
+
+    <!-- Strings related to Mechanics Cell -->
+    <string name="default_mechanic">Mecânica 1</string>
+    <string name="default_mechanic_near">4.5 - 8,4 km</string>
+    <string name="default_mechanic_first_tag">Conserto</string>
+    <string name="default_mechanic_second_tag">Funilaria</string>
+    <string name="default_mechanic_description"> “Mecânica fundada há mais de 10 anos na cidade de São Paulo no bairro Vila Madalena. Somos especializados em serviços gerais e funilaria. Oferecemos um serviço de qualidade e por um ótimo preço. Faça já a sua avaliação!”</string>
 </resources>
