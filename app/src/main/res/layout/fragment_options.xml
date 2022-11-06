@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gray"
+    android:id="@+id/fragmentOptions"
     tools:context=".Options">
 
     <LinearLayout
@@ -13,6 +14,29 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="15dp"
         >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="CarBão"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_mechanics_default" />
+        </RelativeLayout>
 
         <TextView
         android:id="@+id/userName"
@@ -29,6 +53,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="15dp"
+            android:id="@+id/relativeChats"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             >
 
             <ImageView
@@ -39,6 +67,8 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="25dp"
                 android:contentDescription="TODO"
+                android:clickable="false"
+                android:focusable="false"
                 app:srcCompat="@drawable/ic_chat" />
 
 
@@ -48,6 +78,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_toEndOf="@+id/icChats"
                 android:orientation="vertical">
 
@@ -55,6 +87,8 @@
                     android:id="@+id/mechanic_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/chats"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
@@ -64,6 +98,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/chats_description"
                     android:textColor="@color/input_gray"
                     android:textSize="14sp" />
@@ -76,6 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_gravity="end"
                 android:layout_toEndOf="@+id/linearTextChats"
                 app:srcCompat="@drawable/ic_baseline_navigate_next_24" />
@@ -92,6 +130,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/relativeNotifications"
             >
 
             <ImageView
@@ -100,6 +141,8 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="25dp"
+                android:clickable="false"
+                android:focusable="false"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/ic_add_alert" />
 
@@ -109,6 +152,8 @@
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/icNotification"
                 android:orientation="vertical">
@@ -117,6 +162,8 @@
                     android:id="@+id/notification_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/notification"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
@@ -126,6 +173,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/notification_description"
                     android:textColor="@color/input_gray"
                     android:textSize="14sp" />
@@ -137,6 +186,8 @@
                 android:id="@+id/icNotificationDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
                 android:layout_toEndOf="@+id/linearTextNotification"
@@ -155,6 +206,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/relativePayment"
             >
 
             <ImageView
@@ -163,6 +217,8 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="25dp"
+                android:clickable="false"
+                android:focusable="false"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/ic_payment" />
 
@@ -172,6 +228,8 @@
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/icPayment"
                 android:orientation="vertical">
@@ -180,6 +238,8 @@
                     android:id="@+id/payment_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/payment"
                     android:textSize="18sp"
                     android:textColor="@color/white" />
@@ -188,6 +248,8 @@
                     android:id="@+id/paymentDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_marginBottom="10dp"
                     android:textSize="14sp"
                     android:text="@string/payment_description"
@@ -199,6 +261,8 @@
             <ImageView
                 android:id="@+id/icPaymentDetails"
                 android:layout_width="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="end"
@@ -219,6 +283,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/relativeVoucher"
             >
 
             <ImageView
@@ -226,6 +293,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_marginEnd="25dp"
                 android:contentDescription="TODO"
                 app:srcCompat="@drawable/ic_card_giftcard" />
@@ -235,6 +304,8 @@
                 android:id="@+id/linearTextVoucher"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/icVoucher"
@@ -244,6 +315,8 @@
                     android:id="@+id/voucher_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:text="@string/voucher"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -253,6 +326,8 @@
                     android:id="@+id/voucherDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_marginBottom="10dp"
                     android:textSize="14sp"
                     android:text="@string/voucher_description"
@@ -263,6 +338,8 @@
 
             <ImageView
                 android:id="@+id/icVoucherDetails"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"

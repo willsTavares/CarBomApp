@@ -7,36 +7,55 @@
     android:background="@color/gray"
     tools:context=".NearBy">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="15dp"
-        >
-    </LinearLayout>
 
-  <LinearLayout
+    <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
       android:layout_marginHorizontal="15dp"
 
       >
+      <RelativeLayout
+          android:id="@+id/relativeLayout1"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginVertical="10dp">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:text="CarBão"
+              android:textColor="@color/white"
+              android:textSize="30sp" />
+
+          <de.hdodenhof.circleimageview.CircleImageView
+              android:id="@+id/profile_image2"
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:layout_alignParentEnd="true"
+              android:layout_centerVertical="true"
+              android:src="@drawable/ic_mechanics_default" />
+      </RelativeLayout>
+
       <androidx.appcompat.widget.SearchView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_below="@id/relativeLayout1"
           app:queryHint="@string/search_input"
           android:outlineAmbientShadowColor="@color/white"
           android:background="@color/input_gray"
           android:layout_marginBottom="18dp"
           app:iconifiedByDefault="false"
           android:outlineSpotShadowColor="@color/white"
+          android:id="@+id/searchView"
           />
 
       <TextView
           android:id="@+id/titleMechanics"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_below="@id/searchView"
           android:text="@string/near_by_mechanics"
           android:textColor="@color/white"
           android:textSize="22sp"
@@ -48,7 +67,9 @@
       <androidx.recyclerview.widget.RecyclerView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:id="@+id/mechanicsCard"/>
+          android:id="@+id/mechanicsCard"
+          android:layout_below="@id/titleMechanics"/>
 
-  </LinearLayout>
+
+    </RelativeLayout>
 </FrameLayout>
