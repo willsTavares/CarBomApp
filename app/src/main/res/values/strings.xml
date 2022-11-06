@@ -29,7 +29,7 @@
     <string name="default_mechanic_description"> “Mecânica fundada há mais de 10 anos na cidade de São Paulo no bairro Vila Madalena. Somos especializados em serviços gerais e funilaria. Oferecemos um serviço de qualidade e por um ótimo preço. Faça já a sua avaliação!”</string>
 
     <!-- Strings related to Services -->
-    <string name="user_name">Rianer</string>
+    <string name="user_name">Nome do Usuario</string>
     <string name="chats">Chats</string>
     <string name="chats_description">Minhas conversas</string>
     <string name="notification">Notificações</string>
