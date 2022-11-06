@@ -8,15 +8,15 @@
     <item
         android:id="@+id/ic_location"
         android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Location" />
+        android:title="Pesquisar" />
 
     <item
         android:id="@+id/ic_fact_check"
         android:icon="@drawable/ic_baseline_fact_check_24"
-        android:title="Check" />
+        android:title="Serviços" />
 
     <item
         android:id="@+id/ic_user"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="User" />
+        android:title="Opções" />
 </menu>

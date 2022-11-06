@@ -13,7 +13,7 @@
     <string name="login_failed">"Login failed"</string>
 
     <!-- Strings related to Mechanics -->
-    <string name="near_by_mechanics">Mêcanicas próximas de mim</string>
+    <string name="near_by_mechanics">Mêcanicas próximas</string>
     <string name="search_input">Buscar mecânica</string>
     <string name="mechanics">Mecânicas</string>
     <string name="filter_painting">Tinturaria</string>
@@ -23,8 +23,29 @@
 
     <!-- Strings related to Mechanics Cell -->
     <string name="default_mechanic">Mecânica 1</string>
-    <string name="default_mechanic_near">4.5 - 8,4 km</string>
+    <string name="default_mechanic_near">4.5 – 8,4 km</string>
     <string name="default_mechanic_first_tag">Conserto</string>
     <string name="default_mechanic_second_tag">Funilaria</string>
     <string name="default_mechanic_description"> “Mecânica fundada há mais de 10 anos na cidade de São Paulo no bairro Vila Madalena. Somos especializados em serviços gerais e funilaria. Oferecemos um serviço de qualidade e por um ótimo preço. Faça já a sua avaliação!”</string>
+
+    <!-- Strings related to Services -->
+    <string name="user_name">Rianer</string>
+    <string name="chats">Chats</string>
+    <string name="chats_description">Minhas conversas</string>
+    <string name="notification">Notificações</string>
+    <string name="notification_description">Minha central de notificação</string>
+    <string name="payment">Pagamento</string>
+    <string name="payment_description">Meu saldo e QR Code</string>
+    <string name="voucher">Cupons</string>
+    <string name="voucher_description">Meus cupons de desconto</string>
+    <string name="favorite">Favoritos</string>
+    <string name="favorite_description">Meus locais favoritos</string>
+    <string name="help">Ajuda</string>
+    <string name="settings">Configurações</string>
+    <string name="security">Segurança</string>
+    <string name="suggest">Sugerir Mecânica</string>
+
+    <!-- Strings related to Still Working-->
+    <string name="still_working">Opa, estamos trabalhando nessa página. Por favor, volte mais tarde.</string>
+
 </resources>
