@@ -38,7 +38,7 @@ class NearBy : Fragment() {
     }
 
     private suspend fun getAll(): List<MechanicItem>? {
-        return repository.getAll()
+        return repository.getAll(null,binding.searchView.query.toString(), null, null, null)
     }
 
     override fun onCreateView(
