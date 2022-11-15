@@ -1,3 +1,3 @@
-package com.fiap.ifix.api
+package com.fiap.ifix.model
 
 class Mechanic : ArrayList<MechanicItem>()

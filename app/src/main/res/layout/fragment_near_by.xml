@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gray"
-    tools:context=".NearBy">
+    tools:context=".presentation.NearBy"
+    >
 
 
     <RelativeLayout
@@ -13,7 +14,6 @@
       android:layout_height="match_parent"
       android:orientation="vertical"
       android:layout_marginHorizontal="15dp"
-
       >
       <RelativeLayout
           android:id="@+id/relativeLayout1"
@@ -56,6 +56,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_below="@id/searchView"
+
           android:text="@string/near_by_mechanics"
           android:textColor="@color/white"
           android:textSize="22sp"
@@ -63,12 +64,28 @@
           android:textStyle="bold"
           />
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titleMechanics"
+            android:fillViewport="true"
+            >
 
-      <androidx.recyclerview.widget.RecyclerView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/mechanicsCard"
-          android:layout_below="@id/titleMechanics"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mechanics_card"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:spanCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/mechanic_card" />
+
+
+        </androidx.core.widget.NestedScrollView>
+
 
 
     </RelativeLayout>

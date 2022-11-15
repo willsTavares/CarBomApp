@@ -1,4 +1,4 @@
-package com.fiap.ifix
+package com.fiap.ifix.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    tools:context=".Services">
+    tools:context=".presentation.Services">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
