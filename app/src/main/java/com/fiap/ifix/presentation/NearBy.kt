@@ -12,11 +12,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.fiap.ifix.database.AppDatabase
 import com.fiap.ifix.R
 import com.fiap.ifix.api.MechanicWebClient
-import com.fiap.ifix.databinding.ActivityMainBinding
+import com.fiap.ifix.api.RetrofitInitializer
 import com.fiap.ifix.databinding.FragmentNearByBinding
 import com.fiap.ifix.model.MechanicItem
 import com.fiap.ifix.repository.MechanicRepository
@@ -25,15 +23,17 @@ import kotlinx.coroutines.launch
 class NearBy : Fragment() {
     private lateinit var binding: FragmentNearByBinding
 
+    private lateinit var adapter: MechanicCardAdapter
+
     private val repository by lazy {
         MechanicRepository(
-            AppDatabase.instancia(this.context).mechanicDao(),
             MechanicWebClient()
         )
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentNearByBinding.inflate(layoutInflater)
+
         lifecycleScope.launch {
             launch {
                 getAll()
@@ -56,21 +56,28 @@ class NearBy : Fragment() {
     }
 
     private suspend fun showMechanics() {
+        val recyclerView = binding.recyclerView
+        recyclerView.layoutManager = LinearLayoutManager(this.context);
+        recyclerView.setHasFixedSize(true)
 
-        val recyclerView = binding.mechanicsCard
+        val mechanicsResponse =  RetrofitInitializer().mechanicService.getMechanics()
+        mechanicsResponse.map { mechancis ->
+            Log.i("tag", mechancis.name.toString())
+            adapter = MechanicCardAdapter(mechanicsResponse)
+            recyclerView.adapter = adapter
+        }
+          /*  binding.mechanicsCard.visibility =
+                if (mechancis.id.isEmpty()) {
+                    binding.mechanicsCard.visibility = GONE
+                    VISIBLE
+                } else {
+                    binding.mechanicsCard.visibility = VISIBLE
+                    recyclerView.adapter = MechanicCardAdapter(this.context, mechanicsResponse)
+                    recyclerView.setHasFixedSize(true)
+                    GONE
+                }*/
 
-        repository.searchAll()
-            .collect { mechancis ->
-                binding.mechanicsCard.visibility =
-                    if (mechancis.isEmpty()) {
-                        binding.mechanicsCard.visibility = GONE
-                        VISIBLE
-                    } else {
-                        binding.mechanicsCard.visibility = VISIBLE
-                        recyclerView.adapter = MechanicCardAdapter(this.context, mechancis)
-                        GONE
-                    }
-            }
+
     }
 
 }

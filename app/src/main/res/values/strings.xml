@@ -23,7 +23,7 @@
 
     <!-- Strings related to Mechanics Cell -->
     <string name="default_mechanic">Mecânica 1</string>
-    <string name="default_mechanic_near">4.5 – 8,4 km</string>
+    <string name="default_mechanic_near"> %1$d  – %2$s Km</string>
     <string name="default_mechanic_first_tag">Conserto</string>
     <string name="default_mechanic_second_tag">Funilaria</string>
     <string name="default_mechanic_description"> “Mecânica fundada há mais de 10 anos na cidade de São Paulo no bairro Vila Madalena. Somos especializados em serviços gerais e funilaria. Oferecemos um serviço de qualidade e por um ótimo preço. Faça já a sua avaliação!”</string>

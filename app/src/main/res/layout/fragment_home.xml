@@ -47,6 +47,7 @@
             android:textSize="16sp" />
 
     <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/presentationTxt"
@@ -58,5 +59,15 @@
         android:outlineSpotShadowColor="@color/white"
 
         />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCard"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_below="@+id/searchHome"
+            app:spanCount="2"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/mechanic_card" />
+
     </RelativeLayout>
 </FrameLayout>
