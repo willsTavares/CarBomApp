@@ -12,6 +12,7 @@ import kotlin.text.*
 
 
 class MechanicCardAdapter(
+    private val context: Context?,
     private val mechanicList: List<MechanicItem>
 ): RecyclerView.Adapter<MechanicCardAdapter.MyViewHolder>() {
 
@@ -28,7 +29,9 @@ class MechanicCardAdapter(
         val ranking = String.format("%,.1f", mechanic.ranking)
         val distance = String.format("%,.1f", mechanic.distance)
         holder.mechanicName.text = mechanic.name
-//        /holder.mechanicStars.text = context.getString(R.string.default_mechanic_near, ranking, distance)
+        holder.mechanicStars.text = context?.getString(R.string.default_mechanic_near, ranking, distance)
+        holder.mechanicsFirstTag.text = mechanic.services?.first()?.name.toString()
+        holder.mechanicSecondTag.text = mechanic.services?.last()?.name.toString()
     }
 
     override fun getItemCount(): Int {
@@ -38,5 +41,7 @@ class MechanicCardAdapter(
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val mechanicName = itemView.findViewById<TextView>(R.id.mechanic_text);
         val mechanicStars = itemView.findViewById<TextView>(R.id.info_text);
+        val mechanicsFirstTag = itemView.findViewById<TextView>(R.id.first_chip);
+        val mechanicSecondTag = itemView.findViewById<TextView>(R.id.second_chip);
     }
 }

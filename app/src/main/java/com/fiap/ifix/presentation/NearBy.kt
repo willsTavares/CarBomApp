@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.fiap.ifix.R
 import com.fiap.ifix.api.MechanicWebClient
 import com.fiap.ifix.api.RetrofitInitializer
@@ -34,50 +35,34 @@ class NearBy : Fragment() {
         super.onCreate(savedInstanceState)
         binding = FragmentNearByBinding.inflate(layoutInflater)
 
-        lifecycleScope.launch {
-            launch {
-                getAll()
-            }
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                showMechanics()
-            }
-        }
     }
 
-    private suspend fun getAll() {
-        repository.getAll()
+    private suspend fun getAll(): List<MechanicItem>? {
+        return repository.getAll()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_near_by, container, false)
+        val view = inflater.inflate(R.layout.fragment_near_by, container, false)
+        return view
     }
 
-    private suspend fun showMechanics() {
-        val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this.context);
-        recyclerView.setHasFixedSize(true)
-
-        val mechanicsResponse =  RetrofitInitializer().mechanicService.getMechanics()
-        mechanicsResponse.map { mechancis ->
-            Log.i("tag", mechancis.name.toString())
-            adapter = MechanicCardAdapter(mechanicsResponse)
-            recyclerView.adapter = adapter
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch{
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                showMechanics(view)
+            }
         }
-          /*  binding.mechanicsCard.visibility =
-                if (mechancis.id.isEmpty()) {
-                    binding.mechanicsCard.visibility = GONE
-                    VISIBLE
-                } else {
-                    binding.mechanicsCard.visibility = VISIBLE
-                    recyclerView.adapter = MechanicCardAdapter(this.context, mechanicsResponse)
-                    recyclerView.setHasFixedSize(true)
-                    GONE
-                }*/
+    }
 
+    private suspend fun showMechanics(view: View) {
+        Log.i("tag home", getAll().toString())
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
+        recyclerView.adapter = MechanicCardAdapter(this.context, getAll()!!)
     }
 
 }

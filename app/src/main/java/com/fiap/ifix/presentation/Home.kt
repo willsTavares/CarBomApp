@@ -39,7 +39,7 @@ class Home : Fragment() {
     }
 
     private suspend fun getAll(): List<MechanicItem>? {
-        return repository.getAll()
+        return repository.getAll(null,binding.searchHome.query.toString(), null, null, null)
     }
 
 
@@ -62,9 +62,7 @@ class Home : Fragment() {
     }
 
     private suspend fun showMechanics(view: View) {
-        Log.i("tag home", getAll().toString())
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCard)
-
-        recyclerView.adapter = MechanicCardAdapter(getAll()!!)
+        recyclerView.adapter = MechanicCardAdapter(this.context, getAll()!!)
     }
 }

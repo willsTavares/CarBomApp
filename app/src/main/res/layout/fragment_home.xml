@@ -9,14 +9,17 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
 
         <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="15dp">
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -59,15 +62,26 @@
         android:outlineSpotShadowColor="@color/white"
 
         />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCard"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_below="@+id/searchHome"
-            app:spanCount="2"
-            android:scrollbars="vertical"
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/mechanic_card" />
+            android:layout_below="@id/searchHome"
+            android:fillViewport="true"
+            android:layout_marginHorizontal="15dp">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:spanCount="2"
+                tools:listitem="@layout/mechanic_card" />
+
+        </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
 </FrameLayout>

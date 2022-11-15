@@ -2,7 +2,6 @@ package com.fiap.ifix.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.fiap.ifix.api.Service
 import java.util.*
 
 @Entity

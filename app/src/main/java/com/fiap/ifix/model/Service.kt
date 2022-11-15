@@ -1,4 +1,4 @@
-package com.fiap.ifix.api
+package com.fiap.ifix.model
 
 data class Service(
     val id: String?,
