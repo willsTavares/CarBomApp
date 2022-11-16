@@ -9,8 +9,8 @@ import com.fiap.ifix.databinding.ActivityNavbarBinding
 
 class Navbar : AppCompatActivity() {
     private lateinit var binding: ActivityNavbarBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_Ifix)
         super.onCreate(savedInstanceState)
         binding = ActivityNavbarBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -1,5 +1,6 @@
 package com.fiap.ifix.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,10 +8,12 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fiap.ifix.R
@@ -49,6 +52,7 @@ class NearBy : Fragment() {
         return view
     }
 
+    @SuppressLint("UnsafeRepeatOnLifecycleDetector")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch{
@@ -62,7 +66,9 @@ class NearBy : Fragment() {
         Log.i("tag home", getAll().toString())
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
-        recyclerView.adapter = MechanicCardAdapter(this.context, getAll()!!)
+        recyclerView.adapter = MechanicCardAdapter(this.context, getAll()!!){  id ->
+            Toast.makeText(this.context, id, Toast.LENGTH_SHORT ).show()
+        }
     }
 
 }

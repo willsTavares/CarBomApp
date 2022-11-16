@@ -3,6 +3,7 @@ package com.fiap.ifix.presentation
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,10 +14,9 @@ import kotlin.text.*
 
 class MechanicCardAdapter(
     private val context: Context?,
-    private val mechanicList: List<MechanicItem>
+    private val mechanicList: List<MechanicItem>,
+    val mechanicSelected: (String) -> Unit,
 ): RecyclerView.Adapter<MechanicCardAdapter.MyViewHolder>() {
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : MyViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -26,12 +26,17 @@ class MechanicCardAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int ){
         val mechanic = mechanicList[position]
+
         val ranking = String.format("%,.1f", mechanic.ranking)
         val distance = String.format("%,.1f", mechanic.distance)
         holder.mechanicName.text = mechanic.name
         holder.mechanicStars.text = context?.getString(R.string.default_mechanic_near, ranking, distance)
         holder.mechanicsFirstTag.text = mechanic.services?.first()?.name.toString()
         holder.mechanicSecondTag.text = mechanic.services?.last()?.name.toString()
+
+        holder.itemView.setOnClickListener{
+            mechanicSelected(mechanic.id)
+        }
     }
 
     override fun getItemCount(): Int {
