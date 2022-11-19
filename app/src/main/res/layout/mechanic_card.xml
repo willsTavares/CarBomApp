@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp"
     android:layout_marginVertical="4dp"
-    app:cardBackgroundColor="@color/gray"
+    app:cardBackgroundColor="@color/grayCard"
     android:id="@+id/mechanic_card"
     android:layout_gravity = "center_horizontal"
     >
@@ -23,12 +23,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="4dp"
-            android:layout_margin="15dp">
+            android:layout_margin="15dp"
+            app:cardBackgroundColor="@color/gray">
 
             <ImageView
+                android:id="@+id/mechanic_img"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_mechanics_default"
+                app:srcCompat="@drawable/logo_carbom"
                 android:scaleType="fitXY"
                 />
         </androidx.cardview.widget.CardView>
@@ -65,16 +67,23 @@
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/first_chip"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/default_mechanic_first_tag"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="6dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/black"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/second_chip"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/default_mechanic_second_tag"/>
+                    android:text="@string/default_mechanic_second_tag"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/black"
+                    />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>

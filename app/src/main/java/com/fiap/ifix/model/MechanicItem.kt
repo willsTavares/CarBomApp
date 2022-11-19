@@ -11,7 +11,7 @@ data class MechanicItem(
     val address: Address?,
     val description: String?,
     val distance: Double?,
-    val image: Any?,
+    val image: String?,
     val name: String?,
     val ranking: Double?,
     val services: List<Service>?
@@ -22,7 +22,7 @@ data class MechanicItem(
         image = image ?: "",
         name = name ?: "",
         ranking = ranking ?: 0.0,
-        id = id ?: "0",
+        id = id,
         address = address,
         services = services
     )

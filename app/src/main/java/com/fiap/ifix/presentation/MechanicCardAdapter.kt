@@ -3,13 +3,13 @@ package com.fiap.ifix.presentation
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fiap.ifix.R
 import com.fiap.ifix.model.MechanicItem
-import kotlin.text.*
+import com.squareup.picasso.Picasso
 
 
 class MechanicCardAdapter(
@@ -33,6 +33,7 @@ class MechanicCardAdapter(
         holder.mechanicStars.text = context?.getString(R.string.default_mechanic_near, ranking, distance)
         holder.mechanicsFirstTag.text = mechanic.services?.first()?.name.toString()
         holder.mechanicSecondTag.text = mechanic.services?.last()?.name.toString()
+        Picasso.get().load(mechanic.image).into(holder.mechanicImage)
 
         holder.itemView.setOnClickListener{
             mechanicSelected(mechanic.id)
@@ -48,5 +49,6 @@ class MechanicCardAdapter(
         val mechanicStars = itemView.findViewById<TextView>(R.id.info_text);
         val mechanicsFirstTag = itemView.findViewById<TextView>(R.id.first_chip);
         val mechanicSecondTag = itemView.findViewById<TextView>(R.id.second_chip);
+        val mechanicImage = itemView.findViewById<ImageView>(R.id.mechanic_img)
     }
 }

@@ -8,8 +8,6 @@ class MechanicWebClient {
 
     suspend fun getAllMechanics(id: String?, name: String?, UserLatitude: Double?, UserLongitude: Double?, Services: String? ): List<MechanicItem>? {
 
-
-
       return try {
             val mechanicsResponse =  RetrofitInitializer().mechanicService.getMechanics(id, name, UserLatitude, UserLongitude, Services)
             return mechanicsResponse.map { mech ->

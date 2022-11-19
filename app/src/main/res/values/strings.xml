@@ -12,6 +12,10 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    <!-- Strings related to login -->
+    <string name="get_location_btn">Habilitar localização do dispositivo</string>
+    <string name="get_location_dsc">Para uma experiência completa, pedimos para habilitar o serviço de localização </string>
+    <string name="advance">Próximo</string>
     <!-- Strings related to Mechanics -->
     <string name="near_by_mechanics">Mêcanicas próximas</string>
     <string name="search_input">Buscar mecânica</string>

@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="input_gray">#696969</color>
     <color name="gray">#272323</color>
+    <color name="grayCard">#2B2929</color>
     <color name="grayBottom">#322E2E</color>
     <color name="yellow">#FDF762</color>
 

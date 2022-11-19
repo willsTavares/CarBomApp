@@ -1,10 +1,9 @@
 package com.fiap.ifix.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.fiap.ifix.R
-import com.fiap.ifix.databinding.ActivityMainBinding
 import com.fiap.ifix.databinding.ActivityNavbarBinding
 
 class Navbar : AppCompatActivity() {

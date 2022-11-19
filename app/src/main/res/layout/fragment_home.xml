@@ -21,13 +21,12 @@
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="CarBão"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_carbom" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image2"
@@ -43,30 +42,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@id/relativeLayout1"
             android:text="Boa noite, User"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/presentationTxt"
-        app:queryHint="@string/search_input"
-        android:outlineAmbientShadowColor="@color/white"
-        android:background="@color/input_gray"
-        android:layout_margin="18dp"
-        app:iconifiedByDefault="false"
-        android:outlineSpotShadowColor="@color/white"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchHome"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/presentationTxt"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="18dp"
+            android:background="@color/input_gray"
+            app:queryHint="@string/search_input"
+            android:tooltipText="@string/search_input"/>
 
-        />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="140dp"
+            app:cardCornerRadius="4dp"
+            android:layout_below="@+id/searchHome"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/bannerCard"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/banner1"
+                android:scaleType="centerCrop"
+                android:id="@+id/bannerImg"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bannerCard"
+            android:textColor="@color/white"
+            android:id="@+id/titleMech"
+            android:textSize="26sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/mechanics"/>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/searchHome"
+            android:layout_below="@+id/titleMech"
             android:fillViewport="true"
             android:layout_marginHorizontal="15dp">
 
