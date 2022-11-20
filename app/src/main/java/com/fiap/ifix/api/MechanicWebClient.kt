@@ -11,6 +11,7 @@ class MechanicWebClient {
       return try {
             val mechanicsResponse =  RetrofitInitializer().mechanicService.getMechanics(id, name, UserLatitude, UserLongitude, Services)
             return mechanicsResponse.map { mech ->
+                Log.i("Mechanic", mech.name.toString())
                 mech
             }
         } catch (e: Exception) {

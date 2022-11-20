@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fiap.ifix.R
 import com.fiap.ifix.model.MechanicItem
 import com.squareup.picasso.Picasso
+import okhttp3.internal.notify
+import okhttp3.internal.notifyAll
 
 
 class MechanicCardAdapter(
@@ -38,6 +40,7 @@ class MechanicCardAdapter(
         holder.itemView.setOnClickListener{
             mechanicSelected(mechanic.id)
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -50,5 +53,6 @@ class MechanicCardAdapter(
         val mechanicsFirstTag = itemView.findViewById<TextView>(R.id.first_chip);
         val mechanicSecondTag = itemView.findViewById<TextView>(R.id.second_chip);
         val mechanicImage = itemView.findViewById<ImageView>(R.id.mechanic_img)
+
     }
 }

@@ -43,7 +43,6 @@ class MechanicDetails : AppCompatActivity() {
             }
         }
 
-
         binding.returnIcon.setOnClickListener(){
             onBackPressed()
         }

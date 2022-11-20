@@ -113,5 +113,17 @@
                 tools:listitem="@layout/mechanic_card" />
 
         </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="15dp"
+            android:visibility="gone"
+            android:layout_below="@+id/titleMech"
+            android:text="@string/not_found"
+            android:id="@+id/notFoundText"
+            />
     </RelativeLayout>
+
 </FrameLayout>

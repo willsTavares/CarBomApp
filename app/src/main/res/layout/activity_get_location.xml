@@ -14,20 +14,16 @@
         android:gravity="center"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="latitude"
-            android:textColor="@color/white"
-            android:id="@+id/lat"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="longitude"
+            android:text="@string/location_text"
             android:textColor="@color/white"
-            android:layout_below="@id/lat"
-            android:id="@+id/lon"/>
+            android:gravity="center"
+            android:textSize="24sp"
+            android:id="@+id/lon"
+            android:layout_marginBottom="30dp"/>
 
 
         <ImageView
@@ -37,7 +33,7 @@
             android:src="@drawable/my_location"
             android:id="@+id/location_img"
             android:layout_centerHorizontal="true"
-
+            android:layout_marginBottom="30dp"
             />
         <TextView
             android:layout_width="match_parent"

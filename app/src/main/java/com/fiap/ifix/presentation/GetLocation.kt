@@ -59,8 +59,6 @@ class GetLocation : AppCompatActivity()  {
             fusedLocationProviderClient.lastLocation
                 .addOnSuccessListener { location ->
                     if(location != null) {
-                        binding.lat.text = location.latitude.toString()
-                        binding.lon.text = location.longitude.toString()
 
                         val addLocation = shared.edit()
                         addLocation.putLong("latitude" , location.latitude.toRawBits())

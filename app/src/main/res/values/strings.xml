@@ -13,9 +13,11 @@
     <string name="login_failed">"Login failed"</string>
 
     <!-- Strings related to login -->
-    <string name="get_location_btn">Habilitar localização do dispositivo</string>
+    <string name="get_location_btn">Habilitar localização</string>
+    <string name="location_text">Localização</string>
     <string name="get_location_dsc">Para uma experiência completa, pedimos para habilitar o serviço de localização </string>
     <string name="advance">Próximo</string>
+
     <!-- Strings related to Mechanics -->
     <string name="near_by_mechanics">Mêcanicas próximas</string>
     <string name="search_input">Buscar mecânica</string>
@@ -24,6 +26,7 @@
     <string name="filter_parts">Peças</string>
     <string name="filter_fix">Conserto</string>
     <string name="filter_general_services">Serviços em Geral</string>
+    <string name="not_found">Nenhum valor foi encontrado para sua busca</string>
 
     <!-- Strings related to Mechanics Cell -->
     <string name="default_mechanic">Mecânica 1</string>
