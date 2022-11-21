@@ -43,10 +43,14 @@ class SignUp : AppCompatActivity() {
         val email = binding.email.text.toString()
         val password = binding.password.text.toString()
         try {
-            repository.createUser(email, name, password)
-            Toast.makeText(this, "Cadastro criado com sucesso", Toast.LENGTH_LONG ).show()
-            binding.singUp.isVisible = false
-            binding.backBtn.isVisible = true
+            val repo = repository.createUser(email, name, password)
+            if (repo != null) {
+                if (repo.isSuccessful) {
+                    Toast.makeText(this, "Cadastro criado com sucesso", Toast.LENGTH_LONG).show()
+                    binding.singUp.isVisible = false
+                    binding.backBtn.isVisible = true
+                }
+            }
         } catch(e: Exception){
             Toast.makeText(this, "Por favor, tente novamente mais tarde : $e", Toast.LENGTH_LONG ).show()
         }

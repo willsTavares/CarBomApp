@@ -77,7 +77,7 @@ class MechanicDetails : AppCompatActivity() {
 
     private fun showServices(services: List<Service>?) {
         val recyclerView = binding.recyclerViewRow
-        recyclerView.adapter = RowServicesAdapter(services!!){ id ->
+        recyclerView.adapter = RowServicesAdapter(this, services!!){ id ->
             selectedServiceId = id.toString()
             binding.floatingActionButton.isEnabled = true
 

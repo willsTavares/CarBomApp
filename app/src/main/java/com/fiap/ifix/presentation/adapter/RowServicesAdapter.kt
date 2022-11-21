@@ -1,6 +1,7 @@
 package com.fiap.ifix.presentation.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class RowServicesAdapter (
+    private val context: Context?,
     private val serviceList: List<Service>,
     val serviceSelected: (String?) -> Unit,
 ): RecyclerView.Adapter<RowServicesAdapter.RowServiceHolder>() {
@@ -29,8 +31,9 @@ class RowServicesAdapter (
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: RowServiceHolder, @SuppressLint("RecyclerView") position: Int ){
         val mechanic = serviceList[position]
-        holder.mechanicName.text = mechanic.name
-        holder.price.text = mechanic.price.toString()
+        val service = mechanic.name.toString()
+        val price = mechanic.price.toString()
+        holder.price.text = context?.getString(R.string.price, service, price)
         holder.radioButton.isChecked = (position == selectPosition)
         holder.radioButton.setOnClickListener {
             serviceSelected(mechanic.id)
@@ -50,7 +53,6 @@ class RowServicesAdapter (
     }
 
     class RowServiceHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val mechanicName = itemView.findViewById<TextView>(R.id.service_Name);
         val price = itemView.findViewById<TextView>(R.id.price);
         val radioButton = itemView.findViewById<RadioButton>(R.id.radioBtn)
     }

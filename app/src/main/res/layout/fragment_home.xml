@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="20dp"
             android:layout_below="@id/relativeLayout1"
-            android:text="Boa noite, User"
+            android:text="Assistência a onde você precisar"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
