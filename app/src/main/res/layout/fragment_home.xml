@@ -83,11 +83,11 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/titleMech"
+            android:layout_below="@+id/bannerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/bannerCard"
             android:textColor="@color/white"
-            android:id="@+id/titleMech"
             android:textSize="26sp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="4dp"

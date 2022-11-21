@@ -72,15 +72,50 @@
             android:gravity="center"
             />
 
-
         <View
             android:layout_below="@id/mechanicDescription"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginHorizontal="30dp"
-            android:background="@color/grayBottom"/>
+            android:background="@color/grayBottom"
+            android:id="@+id/viewLine"/>
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewLine"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:id="@+id/serviceDetailsTxt"
+            android:text="Serviços"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/serviceDetailsTxt"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="2"
+            tools:listitem="@layout/row_service"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:contentDescription="teste"
+            app:srcCompat="@drawable/ic_add_shopping"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

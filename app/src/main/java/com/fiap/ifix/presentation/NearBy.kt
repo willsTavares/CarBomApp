@@ -16,6 +16,7 @@ import com.fiap.ifix.R
 import com.fiap.ifix.api.MechanicWebClient
 import com.fiap.ifix.databinding.FragmentNearByBinding
 import com.fiap.ifix.model.MechanicItem
+import com.fiap.ifix.presentation.adapter.MechanicCardAdapter
 import com.fiap.ifix.repository.MechanicRepository
 import kotlinx.coroutines.launch
 
@@ -58,7 +59,6 @@ class NearBy : Fragment() {
     }
 
     private suspend fun showMechanics(view: View) {
-        Log.i("tag home", getAll().toString())
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
         recyclerView.adapter = MechanicCardAdapter(this.context, getAll()!!){  id ->

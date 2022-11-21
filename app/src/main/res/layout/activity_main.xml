@@ -33,7 +33,7 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:background="@color/input_gray"
-            android:hint="Nome de Usuario"
+            android:hint="Email"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColor="@color/white"
@@ -64,20 +64,19 @@
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="30dp"
-            android:background="@color/yellow"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/yellow"
             android:text="Entrar"
-            android:textAllCaps="false"
             android:textColor="@color/gray"
             android:textSize="21sp" />
 
-        <TextView
+        <Button
+            android:id="@+id/singUpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
             android:text="Cadastrar"
+            android:backgroundTint="@color/grayCard"
             android:textColor="@color/white"
             android:textSize="21sp" />
     </LinearLayout>

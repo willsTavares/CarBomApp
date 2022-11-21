@@ -1,42 +1,62 @@
 package com.fiap.ifix.presentation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.RecyclerView
 import com.fiap.ifix.R
+import com.fiap.ifix.api.MechanicWebClient
+import com.fiap.ifix.model.Order
+import com.fiap.ifix.presentation.adapter.ServiceCardAdapter
+import com.fiap.ifix.repository.MechanicRepository
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Services.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Services : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+    }
+    private val repository by lazy {
+        MechanicRepository(
+            MechanicWebClient()
+        )
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_services, container, false)
-
+        val view = inflater.inflate(R.layout.fragment_services, container, false)
+        return view
     }
 
+    private suspend fun getServices(): List<Order>?{
+        return repository.getService("1")
+    }
+
+    @SuppressLint("UnsafeRepeatOnLifecycleDetector")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch{
+            launch {
+                getServices()
+            }
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                showServices(view)
+            }
+        }
+    }
+
+    private suspend fun showServices(view: View){
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCardService)
+        recyclerView.adapter = ServiceCardAdapter(getServices()!!)
+    }
 }

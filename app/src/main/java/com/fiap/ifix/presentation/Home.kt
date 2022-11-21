@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +23,7 @@ import com.fiap.ifix.R
 import com.fiap.ifix.api.MechanicWebClient
 import com.fiap.ifix.databinding.FragmentHomeBinding
 import com.fiap.ifix.model.MechanicItem
+import com.fiap.ifix.presentation.adapter.MechanicCardAdapter
 import com.fiap.ifix.repository.MechanicRepository
 import kotlinx.coroutines.launch
 
@@ -71,13 +71,11 @@ class Home : Fragment() {
             override fun onQueryTextChange(p0: String?): Boolean {
                 lifecycleScope.launch {
                     launch {
-                        searchView = p0.toString() ?: null
+                        searchView = p0.toString()
                         getAll()
                     }
-                    lifecycleScope.launch {
-                        repeatOnLifecycle(Lifecycle.State.STARTED) {
-                            showMechanics(view)
-                        }
+                    repeatOnLifecycle(Lifecycle.State.STARTED) {
+                        showMechanics(view)
                     }
                 }
                 return false
